@@ -1,4 +1,5 @@
 #!/usr/bin/env python2
+# -*- coding: utf-8 -*-
 #
 # Copyright 2012 Janis Jansons (janis.jansons@janhouse.lv)
 #
@@ -83,11 +84,10 @@ class TeSpeed:
 
         self.units="Mbit"
         self.unit=0
-        
+        self.testtime = time.strftime(("%d %d %a %Y %H:%M:%S"), time.localtime())
         if unit:
             self.units="MiB"
             self.unit=1
-
         self.store=store
         self.suppress=suppress
         if store:
@@ -383,7 +383,7 @@ class TeSpeed:
             'lat': float(server.attrib['lat']), 
             'lon': float(server.attrib['lon']),
             'url': server.attrib['url'].rsplit('/', 1)[0] + '/',
-            #'url2': server.attrib['url2'].rsplit('/', 1)[0] + '/',
+            'url2': server.attrib['url2'].rsplit('/', 1)[0] + '/',
             'name': server.attrib['name'], 
             'country': server.attrib['country'], 
             'sponsor': server.attrib['sponsor'], 
@@ -570,8 +570,8 @@ class TeSpeed:
 
         self.TestDownload()
         self.TestUpload()
-
-        print_result("%0.2f,%0.2f,\"%s\",\"%s\"\n" % (self.down_speed, self.up_speed, self.units, self.servers))
+        #_rml adding self.timetest
+        print_result("%0.2f,%0.2f,\"%s\",\"%s\",\"%s\" \n" % (self.down_speed, self.up_speed, self.units, self.servers, self.testtime))
 
     def ListServers(self, num=0):
         
