@@ -84,7 +84,7 @@ class TeSpeed:
 
         self.units="Mbit"
         self.unit=0
-        self.testtime = time.strftime(("%d %b %a %Y %H:%M:%S"), time.localtime())
+        self.testTime = time.strftime(("%d %b %a %Y %H:%M:%S"), time.localtime())
         if unit:
             self.units="MiB"
             self.unit=1
@@ -570,8 +570,8 @@ class TeSpeed:
 
         self.TestDownload()
         self.TestUpload()
-        #_rml adding self.timetest
-        print_result("%0.2f,%0.2f,\"%s\",\"%s\",\"%s\" \n" % (self.down_speed, self.up_speed, self.units, self.servers, self.testtime))
+        #_rml adding self.timeTest
+        print_result("%0.2f,%0.2f,\"%s\",\"%s\",\"%s\" \n" % (self.down_speed, self.up_speed, self.units, self.servers, self.testTime))
 
     def ListServers(self, num=0):
         
