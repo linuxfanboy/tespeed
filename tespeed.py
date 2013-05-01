@@ -84,7 +84,7 @@ class TeSpeed:
 
         self.units="Mbit"
         self.unit=0
-        self.testtime = time.strftime(("%d %d %a %Y %H:%M:%S"), time.localtime())
+        self.testtime = time.strftime(("%d %b %a %Y %H:%M:%S"), time.localtime())
         if unit:
             self.units="MiB"
             self.unit=1
